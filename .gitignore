@@ -108,4 +108,3 @@ pyvenv.cfg
 .tm_properties
 
 log/
-*.onnx
