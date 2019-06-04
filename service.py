@@ -34,6 +34,7 @@ end = time.time()
 print("Loading time: {0:f} secs)".format(end - start))
 
 
+# API Handler for MNIST test images
 class MNIST(object):
 
     def on_get(self, req, resp, index):
@@ -53,6 +54,7 @@ class MNIST(object):
                     )
 
 
+# API Handler for API example message
 class Intro(object):
 
     def on_get(self, req, resp):
