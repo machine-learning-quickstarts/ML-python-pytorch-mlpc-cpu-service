@@ -21,6 +21,14 @@ onnx.checker.check_model(model)
 
 rep = backend.prepare(model, device="CPU")  # or "CUDA:0"
 
+# Datasets have moved. Need this until torchvision 0.9.1.
+datasets.MNIST.urls = [
+    'https://ossci-datasets.s3.amazonaws.com/mnist/train-images-idx3-ubyte.gz',
+    'https://ossci-datasets.s3.amazonaws.com/mnist/train-labels-idx1-ubyte.gz',
+    'https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz',
+    'https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz',
+]
+
 transform = transforms.Compose([transforms.ToTensor(),
                                 transforms.Normalize((0.5,), (0.5,)),
                                 ])
